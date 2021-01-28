@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(112, 134, 120);
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+  }
+  
+  .navbar__link {
+    margin: 40px;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: .3em;
+    text-indent: 1em;
+    color: black;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .navbar__link:hover {
+    transform: translateY(-5px);
+  }
+  
+  .main {
+    margin-top: 15%; 
+  }
+ 

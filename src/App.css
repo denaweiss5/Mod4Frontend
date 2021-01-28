@@ -1,38 +1,317 @@
 .App {
   text-align: center;
-}
+  font-family: 'Roboto', sans-serif;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
-  background-color: #282c34;
+
+  background-color: #b6c7ba;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.main{
+  border: 5px double #b6c7ba;
+  border-width: thick;
+  min-width: 350px;
+  min-height: 250px;
+  margin: 30px;
+  background-color: whitesmoke;
+  overflow: scroll;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.view-notecard{
+  border: 5px double #b6c7ba;
+  border-width: thick;
+  min-width: 400px;
+  min-height: 350px;
+  margin: 30px;
+  background-color: whitesmoke;
+  overflow: scroll;
+}
+
+#notecontainer {
+  display: inline-block;
+  background-color: whitesmoke;
+  width: 75%;
+  height: 50%;
+  overflow: scroll;
+}
+
+#notecard {
+  background-color: whitesmoke;
+  display: inline-block;
+  overflow: scroll;
+  max-height: 250px;
+  max-width: 350px;
+}
+
+.notecard-btns{
+  justify-content: space-between;
+  display: flex;
+  width: 40%;
+  float: right;
+}
+
+.submit-form {
+  margin-top: 15%; 
+  border: 5px double #e2e8ec;
+  border-width: thick;
+  min-width: 300px;
+  min-height: 250px;
+  padding: 40px;
+  font-size: 40px;
+}
+.login-form{
+  margin-top: 15%; 
+  border: 5px double #e2e8ec;
+  border-width: thick;
+  min-width: 300px;
+  min-height: 250px;
+  padding: 40px;
+  font-size: 40px;
+}
+
+.new-form {
+  margin-top: 25%; 
+  border: 5px double #e2e8ec;
+  border-width: thick;
+  min-width: 300px;
+  min-height: 250px;
+  padding: 40px;
+  font-size: 40px;
+}
+
+.submit-form p {
+  margin: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  color: black;
+}
+.login-form p {
+  margin: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  color: black;
+}
+
+.new-form p {
+  margin: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  color: black;
+}
+
+.submit-form input {
+  padding-left: 5px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  background-color: whitesmoke;
+}
+.login-form input {
+  padding-left: 5px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  background-color: whitesmoke;
+}
+.new-form input{
+  padding-left: 5px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  background-color: whitesmoke;
+}
+
+.new-form textarea{
+  padding-left: 5px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  background-color: whitesmoke;
+}
+
+#form-submit{
+  margin: 20px;
+  background-color: #e2e8ec;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  font-size: 20px;
+}
+
+#login-btn{
+  margin: 20px;
+  background-color: #e2e8ec;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  font-size: 20px;
+}
+
+#new-btn{
+  margin: 20px;
+  background-color: #e2e8ec;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  letter-spacing: .1em;
+  font-size: 20px;
+}
+
+
+.form {
+  margin-top: 15%; 
+  border: 5px double #e2e8ec;
+  border-width: thick;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+input {
+  width: 500px;
+  height: 70px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+textarea {
+  width: 500px;
+  height: 250px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+.form-submit {
+  float: right;
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  height: 70px;
+  font-size: 20px;
+  background-color: #eceff1;
+}
+
+
+.notes-card-title{
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  margin: 10px;
+}
+
+.view-btns {
+display: inline;
+}
+
+.back-btn {
+  margin-bottom: 1px;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .1em;
+  display: inline;
+  color: black;
+}
+.back-btn:hover{
+  background-color: #b6c7ba;
+}
+.edit-btn {
+  margin-bottom: 1px;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .1em;
+  display: inline;
+  color: black;
+
+
+}
+.edit-btn:hover {
+  background-color: #b6c7ba;
+}
+.view-btn {
+  margin-bottom: 1px;
+  /* margin: 10px; */
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .1em;
+  display: inline;
+  color: black;
+}
+
+.view-btn:hover {
+  background-color: #b6c7ba;
+}
+
+
+.delete-btn:hover{
+  background-color: #b6c7ba;
+}
+.delete-btn {
+  margin-bottom: 1px;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .1em;
+  display: inline;
+  color: black;
+}
+
+.card-title{
+
+  text-align: left;
+  justify-content: left;
+  margin: 10px;
+  font-size: 35px;
+  font-family: 'Roboto', sans-serif;
+ 
+  text-decoration: none;
+  letter-spacing: .1em;
+
+  color: black;
+ 
+}
+
+ 
+.card-content{
+  text-align: left;
+  justify-content: left;
+  margin: 10px;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+
+  text-decoration: none;
+  letter-spacing: .1em;
+  
+  color: black;
+ 
 }
