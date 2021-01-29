@@ -19,6 +19,8 @@ constructor(props){
 componentDidMount(){
   if(!this.props.currentUser){
       this.props.history.push('/login')
+  if()
+  /// check if editNote empty, if it is then grab from back end from the url and then update state with form
   }
 }
 

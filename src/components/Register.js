@@ -37,9 +37,9 @@ class Register  extends React.Component {
                 error: newUser.error
             })
         } else {
-            console.log("Hi!")
+            console.log(newUser)
             this.props.createUser(newUser)
-            this.props.history.push('/login')
+            this.props.history.push('/notes')
         
         }
     })

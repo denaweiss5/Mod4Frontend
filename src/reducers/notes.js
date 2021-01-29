@@ -2,6 +2,7 @@ const notes = (state = [], action) => {
     let updatedNotes;
     switch(action.type){
         case 'LOGIN_SUCCESS':
+        case 'CREATE_USER':
             return action.user.notes
         case 'CREATE_NOTE':
             updatedNotes = [...state, action.note]

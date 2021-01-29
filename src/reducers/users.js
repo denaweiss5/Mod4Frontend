@@ -8,8 +8,10 @@ const users = (state=null, action) => {
         case 'LOGOUT_USER':
             return null
         case 'CREATE_USER':
-            const updatedUsers = [...state, action.user]
-            return updatedUsers
+            return {
+                id: action.user.id,
+                username: action.user.username
+            }
         default:
             return state
     }
