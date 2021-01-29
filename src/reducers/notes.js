@@ -19,14 +19,6 @@ const notes = (state = [], action) => {
                 }
             })
             return updatedNotes
-        case 'SORT_BY_DATE':
-            return {
-                ...state,
-                notes: state.notes
-            }
-       
-            
-        
         default:
             return state
     }

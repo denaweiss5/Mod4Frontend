@@ -7,26 +7,23 @@ import '../navbar.css';
 
 class NoteContainer extends React.Component {
  
-    componentDidMount(){
-        if(!this.props.currentUser){
-            this.props.history.push('/login')
-        }
+componentDidMount(){
+    if(!this.props.currentUser){
+        this.props.history.push('/login')
     }
+}
 
   
-    render(){
-    
+render(){
     return (
         <div className="main" id="notecontainer">
-        {this.props.notes.map(note => {
-            return <NoteCard note={note} key={note.id}/>
-        })}
-    </div>
+            {this.props.notes.map(note => {
+                return <NoteCard note={note} key={note.id}/>
+            })}
+        </div>
     )
     }
-    }
-
-   
+}
 
     const mapStateToProps = (state) => {
         return {

@@ -11,38 +11,37 @@ handleClick = () => {
     this.props.logoutUser()
 }
 
-render(){
-return (
- 
-<nav className="navbar">
-   {
-    this.props.currentUser ? 
-    <nav className="navbar">
-    <Link className="navbar__link" to="/notes">
-      FlatNote
-    </Link>
-    <Link className="navbar__link" to="/notes/new">
-      New Note
-    </Link>
-    
-    <Link className="navbar__link" to="/login" onClick={this.handleClick}>    
-    Sign Out
-    </Link>
-    </nav>
-    :
+  render(){
+  return (
+  
   <nav className="navbar">
-    <Link className="navbar__link" to="/login">    
-    Login
-    </Link> 
-   <Link className="navbar__link" to="/">    
-   Sign Up
-   </Link> 
+    {
+      this.props.currentUser ? 
+      <nav className="navbar">
+        <Link className="navbar__link" to="/notes">
+          FlatNote
+        </Link>
+        <Link className="navbar__link" to="/notes/new">
+          New Note
+        </Link>
+        <Link className="navbar__link" to="/login" onClick={this.handleClick}>    
+        Sign Out
+        </Link>
+      </nav>
+      :
+      <nav className="navbar">
+        <Link className="navbar__link" to="/login">    
+        Login
+        </Link> 
+        <Link className="navbar__link" to="/">    
+        Sign Up
+        </Link> 
+      </nav>
+      }
   </nav>
-    }
-</nav>
 
-)
-}
+  )
+    }
 }
 
 const mapStateToProps = (state) => {

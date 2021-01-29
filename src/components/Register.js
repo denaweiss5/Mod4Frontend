@@ -37,25 +37,24 @@ class Register  extends React.Component {
                 error: newUser.error
             })
         } else {
-            console.log(newUser)
             this.props.createUser(newUser)
             this.props.history.push('/notes/new')
         
         }
     })
-    }
+  }
     
   render(){
     return (
       <div >
-          { this.state.error ? <h4 style={{color: 'red'}}>{this.state.error}</h4> : null}
+        { this.state.error ? <h4 style={{color: 'red'}}>{this.state.error}</h4> : null}
         <form className="submit-form">
-        <p>Register</p>
-          <input  placeholder=" username" type='input' name='username' onChange={this.handleChange} value={this.state.username} />
-          <br></br>
-          <input placeholder=" password" type='password'  name='password' onChange={this.handleChange} value={this.state.password} />
-          <br></br>
-          <input value="Create Account" id="form-submit" type='submit' onClick={this.handleSubmit}/>
+            <p>Register</p>
+            <input  placeholder=" username" type='input' name='username' onChange={this.handleChange} value={this.state.username} />
+            <br></br>
+            <input placeholder=" password" type='password'  name='password' onChange={this.handleChange} value={this.state.password} />
+            <br></br>
+            <input value="Create Account" id="form-submit" type='submit' onClick={this.handleSubmit}/>
         </form>
       </div>
     )

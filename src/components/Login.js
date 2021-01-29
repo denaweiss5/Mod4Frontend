@@ -13,43 +13,42 @@ class Login extends React.Component {
         }
     }
 
-    componentDidMount(){
-        if(!this.props.currentUser){
-            this.props.history.push('/login')
-        }
+componentDidMount(){
+    if(!this.props.currentUser){
+        this.props.history.push('/login')
     }
+}
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
+handleChange = (e) => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-    
-        const reqObj = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body:  JSON.stringify(this.state)
-        }
-        fetch("http://localhost:3000/auth", reqObj)
-        .then(resp => resp.json())
-        .then(data => {
-            if (data.error){
-                this.setState({
-                    error: data.error
-                })
-            } else {
-                this.props.loginSuccess(data)
-                this.props.history.push('/notes')
-            }
-           
-            console.log(data)
-        })
+handleSubmit = (e) => {
+    e.preventDefault()
+
+    const reqObj = {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body:  JSON.stringify(this.state)
     }
+    fetch("http://localhost:3000/auth", reqObj)
+    .then(resp => resp.json())
+    .then(data => {
+        if (data.error){
+            this.setState({
+                error: data.error
+            })
+        } else {
+            
+            this.props.loginSuccess(data)
+            this.props.history.push('/notes')
+        }
+    })
+}
 
  render(){
    return (

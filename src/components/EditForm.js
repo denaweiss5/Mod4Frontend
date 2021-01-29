@@ -17,62 +17,42 @@ constructor(props){
 
    
 componentDidMount(){
-  // if(!this.props.editNote){
-  //   console.log("empty")
-  // }
-  //   fetch(`http://localhost:3000/notes/${this.props.match.params.id}`)
-  //   .then(resp => resp.json())
-  //   .then(noteObj => {
-  //     console.log(noteObj)
-  //     this.setState({
-  //       title: noteObj.title,
-  //       content: noteObj.content,
-  //       id: noteObj.id,
-  //       user_id: noteObj.user_id
-  //     })
-  //   })
-  // }
   if(!this.props.currentUser){
       this.props.history.push('/login')
-  
-  /// check if editNote empty, if it is then grab from back end from the url and then update state with form
-  }
+    }
 }
 
-    handleChange = (e) => {
-      this.setState({
-        [e.target.name]: e.target.value
-      })
-    }
+handleChange = (e) => {
+  this.setState({
+    [e.target.name]: e.target.value
+  })
+}
 
-  handleSubmit = (e) => {
-    const  id  = this.props.match.params.id
-    e.preventDefault()
-   
-    console.log(e)
-    fetch(`http://localhost:3000/notes/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": 'application/json'
-      },
-      body: JSON.stringify({
-        title: this.state.title,
-        content: this.state.content,
-        user_id: this.props.currentUser.id
-      })
+handleSubmit = (e) => {
+  const  id  = this.props.match.params.id
+  e.preventDefault()
+  
+  fetch(`http://localhost:3000/notes/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": 'application/json'
+    },
+    body: JSON.stringify({
+      title: this.state.title,
+      content: this.state.content,
+      user_id: this.props.currentUser.id
     })
-    .then(resp => resp.json())
-    .then(updatedNote => {
-      this.props.updateNoteSuccess(updatedNote)
-    
-      this.props.history.push('/notes')
-    })
-    
-  }
+  })
+  .then(resp => resp.json())
+  .then(updatedNote => {
+    this.props.updateNoteSuccess(updatedNote)
+    this.props.history.push('/notes')
+  })
+  
+}
 
 
   render(){
-    
     return (
       <div >
         <form className="new-form" onSubmit={this.handleSubmit}>

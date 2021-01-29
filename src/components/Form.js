@@ -11,43 +11,43 @@ class Form  extends React.Component {
   }
 
 
-  componentDidMount(){
-    if(!this.props.currentUser){
-        this.props.history.push('/login')
-    }
+componentDidMount(){
+  if(!this.props.currentUser){
+      this.props.history.push('/login')
+  }
 }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+handleChange = (e) => {
+  this.setState({
+    [e.target.name]: e.target.value
+  })
+}
 
-  handleSubmit = (e) => {
+handleSubmit = (e) => {
     
-    e.preventDefault()
-    fetch('http://localhost:3000/notes', {
-      method: "POST",
-      headers: {
-        "Content-Type": 'application/json'
-      },
-      body: JSON.stringify({
-        title: this.state.title,
-        content: this.state.content,
-        user_id: this.props.currentUser.id
-      })
+  e.preventDefault()
+  fetch('http://localhost:3000/notes', {
+    method: "POST",
+    headers: {
+      "Content-Type": 'application/json'
+    },
+    body: JSON.stringify({
+      title: this.state.title,
+      content: this.state.content,
+      user_id: this.props.currentUser.id
     })
-    .then(resp => resp.json())
-    .then(newNote => {
-      this.setState({
-        title: '',
-        content: ''
-      })
-      this.props.createNote(newNote)
-      this.props.history.push('/notes')
+  })
+  .then(resp => resp.json())
+  .then(newNote => {
+    this.setState({
+      title: '',
+      content: ''
     })
-    
-  }
+    this.props.createNote(newNote)
+    this.props.history.push('/notes')
+  })
+  
+}
 
 
   render(){
