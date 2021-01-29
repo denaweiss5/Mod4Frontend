@@ -11,8 +11,13 @@ class NoteCard extends React.Component {
  render(){
 
     const { id } = this.props.note
+    const { note } = this.props
+
+  
+   
+
    return (
-       
+    
    <div className="main" id="notecard">
     <div className="notecard-btns">
     <Link className="edit-btn" to={`/notes/edit/${id}`} onClick={()=>this.props.updateNote(this.props.note)}>Edit</Link>
@@ -23,9 +28,11 @@ class NoteCard extends React.Component {
     <h3 className="card-title">{this.props.note.title}</h3>
     <h5 className="card-content">{this.props.note.content}</h5>
    </div>
+ 
    )
+   }
  }
-}
+
 
 const mapDispatchToProps = {
     deleteNote: deleteNote,

@@ -15,11 +15,26 @@ constructor(props){
   }
 }
 
-  
+   
 componentDidMount(){
+  // if(!this.props.editNote){
+  //   console.log("empty")
+  // }
+  //   fetch(`http://localhost:3000/notes/${this.props.match.params.id}`)
+  //   .then(resp => resp.json())
+  //   .then(noteObj => {
+  //     console.log(noteObj)
+  //     this.setState({
+  //       title: noteObj.title,
+  //       content: noteObj.content,
+  //       id: noteObj.id,
+  //       user_id: noteObj.user_id
+  //     })
+  //   })
+  // }
   if(!this.props.currentUser){
       this.props.history.push('/login')
-  if()
+  
   /// check if editNote empty, if it is then grab from back end from the url and then update state with form
   }
 }
@@ -57,7 +72,6 @@ componentDidMount(){
 
 
   render(){
-    console.log(this.props)
     
     return (
       <div >

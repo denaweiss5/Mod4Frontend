@@ -39,15 +39,12 @@ class Register  extends React.Component {
         } else {
             console.log(newUser)
             this.props.createUser(newUser)
-            this.props.history.push('/notes')
+            this.props.history.push('/notes/new')
         
         }
     })
     }
     
-  
-
-
   render(){
     return (
       <div >

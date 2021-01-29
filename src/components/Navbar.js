@@ -34,7 +34,7 @@ return (
     <Link className="navbar__link" to="/login">    
     Login
     </Link> 
-   <Link className="navbar__link" to="/register">    
+   <Link className="navbar__link" to="/">    
    Sign Up
    </Link> 
   </nav>

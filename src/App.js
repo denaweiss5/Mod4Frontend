@@ -14,6 +14,7 @@ import Register from './components/Register'
 
 
 
+
 class App extends React.Component {
 
 
@@ -24,15 +25,15 @@ class App extends React.Component {
         <header className="App-header">
      
           <Navbar/>
-
+     
           <Switch>
-          <Route component={Register} path='/register'/>
+          
           <Route component={Login} path='/login'/>
           <Route component={Form} path='/notes/new'/>
           <Route component={EditForm} path='/notes/edit/:id'/>
           <Route component={ViewNote} path='/notes/:id'/>
           <Route component={NoteContainer} path='/notes'/>
-          
+          <Route component={Register} path='/'/>
     
           
       

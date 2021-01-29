@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import '../navbar.css';
 
 
+
 class NoteContainer extends React.Component {
  
     componentDidMount(){
@@ -12,16 +13,18 @@ class NoteContainer extends React.Component {
         }
     }
 
+  
     render(){
-        return (
-            <div className="main" id="notecontainer">
-                {this.props.notes.map(note => {
-                    return <NoteCard note={note} key={note.id}/>
-                })}
-            </div>
-        )
+    
+    return (
+        <div className="main" id="notecontainer">
+        {this.props.notes.map(note => {
+            return <NoteCard note={note} key={note.id}/>
+        })}
+    </div>
+    )
     }
-}
+    }
 
    
 

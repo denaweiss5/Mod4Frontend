@@ -5,6 +5,7 @@ import showingNoteReducer from './showingNote'
 import editNoteReducer from './editNote'
 
 
+
 export default combineReducers({
   notes: notesReducer,
   currentUser: currentUserReducer,
